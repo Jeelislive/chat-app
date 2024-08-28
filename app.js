@@ -49,7 +49,7 @@ app.use("/api/v1/chat", chatRoute);
 app.use("/api/v1/admin", adminRoute);
 
 app.get("/", (req, res) => {
-  res.send("Hello World from home");
+  res.send("Hello World from home");  
 });
 
 io.use((socket, next) => {
@@ -135,3 +135,4 @@ server.listen(port, () => {
 });
 
 export { envMode, userSocketIDs };
+export default app;
