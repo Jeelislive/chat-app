@@ -44,9 +44,9 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(cors(corsOptions));
 
-app.use("api/v1/user", userRoute);
-app.use("api/v1/chat", chatRoute);
-app.use("api/v1/admin", adminRoute);
+app.use("/api/v1/user", userRoute);
+app.use("/api/v1/chat", chatRoute);
+app.use("/api/v1/admin", adminRoute);
 
 app.get("/", (req, res) => {
   res.send("Hello World from home");
