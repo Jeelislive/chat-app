@@ -135,4 +135,3 @@ server.listen(port, () => {
 });
 
 export { envMode, userSocketIDs };
-export default app;
