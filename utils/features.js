@@ -11,6 +11,7 @@ const cookieOptions = {
   sameSite: "none",
   httpOnly: true,
   secure: true,
+  secure: process.env.NODE_ENV === 'PRODUCTION',
 };
 
 const connectDb = (uri) => {
