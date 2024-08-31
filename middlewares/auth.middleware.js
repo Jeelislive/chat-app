@@ -16,8 +16,6 @@ const isAuthenticated = TryCatch(async (req, res, next) => {
     req.user = decodedData._id;
     
     next();
-
-
 });     
 
 const onlyAdmin = TryCatch(async (req, res, next) => {

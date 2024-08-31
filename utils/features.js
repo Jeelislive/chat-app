@@ -33,7 +33,7 @@ const sendToken = (res, user, code, message) => {
     success: true,
     user,
     message,
-  });
+  }); 
 };
 
 const emitEvent = (req, event, users, data) => {
