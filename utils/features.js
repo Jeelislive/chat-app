@@ -9,8 +9,8 @@ dotenv.config();
 const cookieOptions = {
   maxAge: 15 * 24 * 60 * 60 * 1000,
   sameSite: "none",
-  httpOnly: false,
-  secure: false,
+  httpOnly: true,
+  secure: true,
 };
 
 const connectDb = (uri) => {
