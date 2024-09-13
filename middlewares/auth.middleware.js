@@ -7,7 +7,7 @@ import { User } from "../models/user.model.js";
 
 const isAuthenticated = TryCatch(async (req, res, next) => {
    const token = req.cookies[CHATAPPTOKEN];
-   console.log(token);
+//    console.log(token);
    if (!token) return next(new ErrorHandler("Please login to access this route", 401));
 
     const decodedData = jwt.verify(token, process.env.JWT_SECRET);

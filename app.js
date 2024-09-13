@@ -3,20 +3,27 @@ import { connectDb } from "./utils/features.js";
 import dotenv from "dotenv";
 import { errorMiddleware } from "./middlewares/error.js";
 import cookieParser from "cookie-parser";
-dotenv.config();
+
 import { Server } from "socket.io";
 import { createServer } from "http";
 import { v4 as uuid } from "uuid";
+import cors from "cors";
+import { v2 as cloudinary } from "cloudinary";
+
+
 import userRoute from "./routes/user.routes.js";
 import chatRoute from "./routes/chat.routes.js";
 import adminRoute from "./routes/admin.routes.js";
 import { CHAT_JOINED, CHAT_LEAVED, NEW_MESSAGE, NEW_MESSAGE_ALERT, ONLINE_USERS, START_TYPING, STOP_TYPING } from "./constants/events.js";
 import { getSockets } from "./lib/helper.js";
 import { Message } from "./models/message.model.js";
-import cors from "cors";
-import { v2 as cloudinary } from "cloudinary";
+
 import { corsOptions } from "./constants/config.js";
 import { socketAuthenticator } from "./middlewares/auth.middleware.js";
+
+dotenv.config({
+  path: "./.env",
+});
 
 const mongoURI = process.env.MONGO_URI;
 const port = process.env.PORT || 3000;
